@@ -276,18 +276,18 @@ section {
 
 .navigation {
     display: flex;
-    align-items: center;
 }
 
+/* When open on mobile display vertically */
 .navigation.open {
     position: absolute;
     top: 60px;
     right: 12px;
     background: rgba(23, 42, 88, 0.98);
-    padding: 12px;
+    padding: 15px;
     border-radius: 8px;
     flex-direction: column;
-    gap: 8px;
+    gap: 20px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
