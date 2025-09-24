@@ -6,196 +6,134 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- روابط للأيقونات والتنسيقات -->
+  <!-- CHANGELOG (2025-09-24):
+       - Cleaned HTML: removed placeholder/empty lines and redundant comments.
+       - Standardized header icons and added `class="active"` to the Course nav link.
+       - Mobile improvements: added hamburger button (`.nav-toggle`) and `js/nav.js` to toggle the mobile menu.
+       - Responsive CSS updates applied in `style2.css` (stacked cards, fluid images, adjusted paddings).
+       - Added `.navigation.open` and `.nav-toggle` styles to enable the mobile collapsible menu.
+       - Accessibility tweaks: aria-labels added to social/profile links where available.
+       - Files changed: course.html, index.html, projects.html, Team.html, poot.html, Team/*, style.css, style1.css, style2.css, js/nav.js
+  -->
+
+  <!-- Icon and stylesheet links -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style2.css">
 
-  <!-- عنوان الصفحة -->
   <title>Kraken Course</title>
   <link rel="icon" type="image/png" href="main/back5.png">
-
 </head>
 
 <body>
-
-  <!-- رأس الصفحة -->
   <header>
     <a href="index.html" class="logo">
-      <img src="main/back5.png" alt="" class="lago11">
-      <span class="logo-text">kraken</span> </a>
+      <img src="main/back5.png" alt="kraken logo" class="lago11">
+      <span class="logo-text">kraken</span>
+    </a>
     <nav class="navigation">
-
       <a href="Team.html"><i class="fas fa-users"></i> Team</a>
-      <a href="course.html" style="color: blueviolet;"><i class="fa-edit fas fa-chalkboard-user"></i> Course</a>
+      <a href="course.html" class="active"><i class="fas fa-chalkboard"></i> Course</a>
       <a href="projects.html"><i class="fas fa-code"></i> Projects</a>
-      <a href="poot.html"><i class="fab-duotone fas fa-comment"></i> Contact</a>
-
+      <a href="poot.html"><i class="fas fa-comment"></i> Contact</a>
     </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
   </header>
-
-
 
   <section class="main">
     <div>
-      <h2><br><span>Kraken Course</span></h2>
-      <h3>We offer you a number of courses issued by the team.</h3>
-
-
-      <!-- أيقونات التواصل الاجتماعي -->
-
-
+      <h2><span>Kraken Course</span></h2>
+      <h3>We offer a number of courses produced by the team.</h3>
     </div>
   </section>
 
-
-
-
-  <!-- قسم المشاريع -->
   <section class="projects" id="projects">
     <h1 class="title">Course</h1>
     <div class="content">
 
-
-
-      <!-- كرت مشروع 1 -->
       <div class="Team-card">
         <div class="project-image">
-          <img src="course/333.png" alt="مشروع Dev Books">
+          <img src="course/333.png" alt="HTML course">
         </div>
         <div class="project-info">
           <span><b>{ HTML }</b></span>
           <p class="project-category"><b>Do you know what language browsers use?</b></p>
-          <p>Here you will learn its basics and structure.</p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-
+          <p>Learn the basics and structure of HTML.</p>
           <strong class="project-title">
             <span>Abdullah Radhi</span>
-            <a href="https://www.youtube.com/watch?v=DCLTvOQaCVU&list=PLGDUx_BeIemxneisNgqgXci7Sekz6BdlG"
-              class="more-details">Visit</a>
+            <a href="https://www.youtube.com/watch?v=DCLTvOQaCVU&list=PLGDUx_BeIemxneisNgqgXci7Sekz6BdlG" class="more-details">Visit</a>
           </strong>
         </div>
       </div>
 
-
-
-
-
-      <!-- كرت مشروع 2 -->
       <div class="Team-card">
         <div class="project-image">
-          <img src="course/240_F_267306011_AIi33EfelCOICXJVy2dscwLPmJGHD5YD.jpg" alt="مشروع Dev Books">
+          <img src="course/240_F_267306011_AIi33EfelCOICXJVy2dscwLPmJGHD5YD.jpg" alt="Java course">
         </div>
         <div class="project-info">
           <span><b>{ JAVA }</b></span>
-          <p class="project-category"><b>Do you know what language the app is using?</b></p>
-          <p>Here you will learn its basics and structure.</p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
+          <p class="project-category"><b>Do you know what language apps use?</b></p>
+          <p>Introduction to Java fundamentals.</p>
           <strong class="project-title">
-            <span></span>
-            <a href="" class="more-details">Visit</a>
-          </strong>
-        </div>
-      </div>
-
-
-
-      <!-- كرت مشروع 3 -->
-      <div class="Team-card">
-        <div class="project-image">
-          <img src="course/240_F_419893950_XY2aVUT5S5cPObSXOWFpBMi8da9jtMfH.jpg" alt="مشروع Dev Books">
-        </div>
-        <div class="project-info">
-          <span></span>
-          <p class="project-category"><b>Not available</b></p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <strong class="project-title">
-            <span></span>
-            <a href="" class="more-details">Visit</a>
-          </strong>
-        </div>
-      </div>
-
-
-
-      <!-- كرت مشروع 4 -->
-      <div class="Team-card">
-        <div class="project-image">
-          <img src="course/1.png" alt="مشروع Dev Books">
-        </div>
-        <div class="project-info">
-          <span></span>
-          <p class="project-category"><b>Not available</b></p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <strong class="project-title">
-            <span> </span>
             <a href="#" class="more-details">Visit</a>
           </strong>
         </div>
       </div>
 
-
-      <!-- كرت مشروع 5 -->
       <div class="Team-card">
         <div class="project-image">
-          <img src="course/1000_F_286032339_sMroQsvmsurZfOEbo6R2Y3iLegDMUdVC.jpg" alt="مشروع Dev Books">
+          <img src="course/240_F_419893950_XY2aVUT5S5cPObSXOWFpBMi8da9jtMfH.jpg" alt="Coming soon">
         </div>
         <div class="project-info">
-          <span></span>
+          <span><b>{ Coming Soon }</b></span>
           <p class="project-category"><b>Not available</b></p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
           <strong class="project-title">
-            <span></span>
-            <a href="" class="more-details">Visit</a>
+            <a href="#" class="more-details">Details</a>
           </strong>
         </div>
       </div>
 
-
-      <!-- كرت مشروع 6 -->
       <div class="Team-card">
         <div class="project-image">
-          <img src="course/Screenshot 2025-09-23 193639.png" alt="مشروع Dev Books">
+          <img src="course/1.png" alt="Coming soon">
         </div>
         <div class="project-info">
-          <span></span>
+          <span><b>{ Coming Soon }</b></span>
           <p class="project-category"><b>Not available</b></p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
-          <p class="ahmad"> . </p>
           <strong class="project-title">
-            <span></span>
-            <a href="" class="more-details">Visit</a>
+            <a href="#" class="more-details">Details</a>
           </strong>
         </div>
       </div>
 
+      <div class="Team-card">
+        <div class="project-image">
+          <img src="course/1000_F_286032339_sMroQsvmsurZfOEbo6R2Y3iLegDMUdVC.jpg" alt="Coming soon">
+        </div>
+        <div class="project-info">
+          <span><b>{ Coming Soon }</b></span>
+          <p class="project-category"><b>Not available</b></p>
+          <strong class="project-title">
+            <a href="#" class="more-details">Details</a>
+          </strong>
+        </div>
+      </div>
 
-
-
-
-
-
-
-
+      <div class="Team-card">
+        <div class="project-image">
+          <img src="course/Screenshot 2025-09-23 193639.png" alt="Coming soon">
+        </div>
+        <div class="project-info">
+          <span><b>{ Coming Soon }</b></span>
+          <p class="project-category"><b>Not available</b></p>
+          <strong class="project-title">
+            <a href="#" class="more-details">Details</a>
+          </strong>
+        </div>
+      </div>
 
     </div>
   </section>
+  <script src="js/nav.js"></script>
 </body>
 
-
 </html>
-
-

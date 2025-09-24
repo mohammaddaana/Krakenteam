@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <title>Kraken Contact</title>
   <link rel="icon" type="image/png" href="main/back5.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   <style>
     /* 🎨 إعدادات عامة للصفحة */
@@ -27,11 +29,9 @@
       background-size: cover;
     }
 
-
     /* 📦 صندوق الأسئلة */
     .question-box {
       margin-top: calc(10vh + 5px);
-
       /* نزلناه 5px إضافية لتحت */
       background-color: rgba(0, 0, 0, 0.5);
       /* شفاف غامق */
@@ -43,8 +43,6 @@
     }
 
     /* 📝 الحقول (اسم - هاتف - سؤال) */
-
-
     input,
     textarea {
       padding: 10px;
@@ -89,6 +87,66 @@
         font-size: 18px;
       }
     }
+
+    /* 🌐 قائمة التنقل */
+    .navigation {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .navigation a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* 🍔 زر الهامبرغر */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav-toggle i {
+      font-size: 24px;
+      color: white;
+    }
+
+    /* 📱 موبايل - قائمة التنقل */
+    @media (max-width: 767px) {
+      .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px 0;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+
+      .navigation.active {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+    }
   </style>
 
   <!-- ملف CSS خارجي (اختياري) -->
@@ -101,16 +159,17 @@
   <header>
     <a href="index.html" class="logo">
       <img src="main/back5.png" alt="" class="lago11">
-      <span class="logo-text">kraken</span> </a>
+      <span class="logo-text">kraken</span>
+    </a>
 
     <!-- روابط التنقل -->
     <nav class="navigation">
-
       <a href="Team.html"><i class="fas fa-users"></i> Team</a>
-      <a href="course.html"><i class="fa-edit fas fa-chalkboard-user"></i> Course</a>
+      <a href="course.html"><i class="fas fa-chalkboard"></i> Course</a>
       <a href="projects.html"><i class="fas fa-code"></i> Projects</a>
-      <a href="poot.html" style="color: blueviolet;"><i class="fab-duotone fas fa-comment"></i> Contact</a>
+      <a href="poot.html" class="active"><i class="fas fa-comment"></i> Contact</a>
     </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
   </header>
 
   <!-- 📥 صندوق إرسال الأسئلة -->
@@ -177,6 +236,7 @@
         });
     }
   </script>
+  <script src="js/nav.js"></script>
 </body>
 
 </html>

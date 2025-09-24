@@ -2,77 +2,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* ⚙️ إعدادات عامة لكل العناصر */
-*{
-    font-family: 'Poppins', sans-serif; /* الخط الأساسي */
-    margin: 0;  /* إلغاء الهوامش */
-    padding: 0; /* إلغاء المسافات الداخلية */
-    box-sizing: border-box; /* يحسب البُعد مع البوردر */
-    scroll-behavior: smooth; /* سكرول سلس */
+* {
+    font-family: 'Poppins', sans-serif;
+    /* الخط الأساسي */
+    margin: 0;
+    /* إلغاء الهوامش */
+    padding: 0;
+    /* إلغاء المسافات الداخلية */
+    box-sizing: border-box;
+    /* يحسب البُعد مع البوردر */
+    scroll-behavior: smooth;
+    /* سكرول سلس */
 }
 
 /* 🟦 الهيدر (الشريط العلوي) */
 header {
-    background-color: #172a58; /* لون خلفية */
-    width: 100%; /* عرض كامل */
-    position: fixed; /* ثابت في الأعلى */
-    z-index: 999; /* للأمام */
-    display: flex; /* فليكس لعنصرين داخله */
-    justify-content: space-between; /* مسافة بين العناصر */
-    align-items: center; /* محاذاة عمودية بالنص */
-    padding: 5px 20px ; /* مسافة داخلية */
+    background-color: #172a58;
+    /* لون خلفية */
+    width: 100%;
+    /* عرض كامل */
+    position: fixed;
+    /* ثابت في الأعلى */
+    z-index: 999;
+    /* للأمام */
+    display: flex;
+    /* فليكس لعنصرين داخله */
+    justify-content: space-between;
+    /* مسافة بين العناصر */
+    align-items: center;
+    /* محاذاة عمودية بالنص */
+    padding: 5px 20px;
+    /* مسافة داخلية */
 }
 
 /* 🔷 اللوجو (النص بجانب الصورة) */
-.logo{
-    text-decoration: none; /* بدون خط */
-    color: #3a6cf4; /* لون أزرق */
-    text-transform: uppercase; /* تحويل لحروف كابيتال */
-    font-weight: 900; /* سمك الخط */
-    font-size: 2em; /* حجم الخط */
+.logo {
+    text-decoration: none;
+    /* بدون خط */
+    color: #3a6cf4;
+    /* لون أزرق */
+    text-transform: uppercase;
+    /* تحويل لحروف كابيتال */
+    font-weight: 900;
+    /* سمك الخط */
+    font-size: 2em;
+    /* حجم الخط */
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 /* 🖼️ صورة اللوجو */
-.lago11{
-    width: 40px; /* العرض */
+.lago11 {
+    width: 40px;
+    /* العرض */
 }
 
 /* 🔗 روابط التنقل */
-.navigation a{
-    color: #3a6cf4; /* اللون الأساسي */
-    text-decoration: none; /* بدون خط */
-    font-size: 1.1em; /* الحجم */
-    font-weight: 500; /* السمك */
-    padding-left: 30px; /* مسافة يسار */
+.navigation a {
+    color: #3a6cf4;
+    /* اللون الأساسي */
+    text-decoration: none;
+    /* بدون خط */
+    font-size: 1.1em;
+    /* الحجم */
+    font-weight: 500;
+    /* السمك */
+    padding-left: 30px;
+    /* مسافة يسار */
 }
 
+.navigation a.active {
+    color: #601cfc;
+    font-weight: 700;
+}
+
+
 /* ✨ تأثير hover على الروابط */
-.navigation a:hover{
-    color: #601cfc; /* تغيير اللون عند المرور */
+.navigation a:hover {
+    color: #601cfc;
+    /* تغيير اللون عند المرور */
 }
 
 /* 🖼️ إعداد عام للأقسام */
 section {
-    padding: 100px 200px; /* مسافة داخلية */
+    padding: 100px 200px;
+    /* مسافة داخلية */
 }
 
 /* 🎬 قسم الـ Main */
 .main {
-    width: 100%; /* عرض كامل */
-    min-height: 100vh; /* ارتفاع على قد الشاشة */
-    display: flex; /* فليكس */
-    align-items: center; /* محاذاة عمودية */
-    background: url(back2.jpg) no-repeat; /* خلفية */
-    background-size: cover; /* تغطية كاملة */
-    background-position: center; /* بالنص */
-    background-attachment: fixed; /* ثابتة أثناء السكرول */
+    width: 100%;
+    /* عرض كامل */
+    min-height: 100vh;
+    /* ارتفاع على قد الشاشة */
+    display: flex;
+    /* فليكس */
+    align-items: center;
+    /* محاذاة عمودية */
+    background: url(back2.jpg) no-repeat;
+    /* خلفية */
+    background-size: cover;
+    /* تغطية كاملة */
+    background-position: center;
+    /* بالنص */
+    background-attachment: fixed;
+    /* ثابتة أثناء السكرول */
 }
 
 /* ✍️ النصوص داخل الـ Main */
 .main h2 {
-    color: #fff; /* أبيض */
+    color: #fff;
+    /* أبيض */
     font-size: 1.4em;
     font-weight: 500;
 }
@@ -81,7 +122,8 @@ section {
 .main h2 span {
     display: inline-block;
     margin-top: 10px;
-    color: #4e9eff; /* أزرق فاتح */
+    color: #4e9eff;
+    /* أزرق فاتح */
     font-size: 3em;
     font-weight: 600;
 }
@@ -91,30 +133,40 @@ section {
     color: #fff;
     font-size: 2em;
     font-weight: 700;
-    letter-spacing: 1px; /* مسافة بين الحروف */
+    letter-spacing: 1px;
+    /* مسافة بين الحروف */
     margin-top: 10px;
     margin-bottom: 30px;
 }
 
 /* 🔘 زر رئيسي */
 .main-btn {
-    color: #fff; /* أبيض */
-    background-color: #3a6cf4; /* أزرق */
-    text-decoration: none; /* بدون خط */
+    color: #fff;
+    /* أبيض */
+    background-color: #3a6cf4;
+    /* أزرق */
+    text-decoration: none;
+    /* بدون خط */
     font-size: 1.1em;
     font-weight: 600;
     display: inline-block;
-    padding: 0.9375em 2.1875em; /* مسافة داخلية */
-    letter-spacing: 1px; /* تباعد الحروف */
-    border-radius: 15px; /* حواف دائرية */
+    padding: 0.9375em 2.1875em;
+    /* مسافة داخلية */
+    letter-spacing: 1px;
+    /* تباعد الحروف */
+    border-radius: 15px;
+    /* حواف دائرية */
     margin-bottom: 40px;
-    transition: 0.7s ease; /* تأثير */
+    transition: 0.7s ease;
+    /* تأثير */
 }
 
 /* 🔘 زر Hover */
 .main-btn:hover {
-    background-color: #0a49f6; /* أزرق أدكن */
-    transform: scale(1.1); /* تكبير */
+    background-color: #0a49f6;
+    /* أزرق أدكن */
+    transform: scale(1.1);
+    /* تكبير */
 }
 
 /* 🌐 أيقونات التواصل */
@@ -139,14 +191,16 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    flex-wrap: wrap; /* يكسر سطر عند الحاجة */
+    flex-wrap: wrap;
+    /* يكسر سطر عند الحاجة */
 }
 
 /* 🃏 الكارد */
 .card {
     background-color: #fff;
     width: 21.25em;
-    box-shadow: 0 5px 25px rgba(1 1 1 / 15%); /* ظل */
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    /* ظل */
     border-radius: 10px;
     padding: 25px;
     margin: 15px;
@@ -170,7 +224,7 @@ section {
     text-align: center;
 }
 
-.info h3{
+.info h3 {
     color: #3a6cf4;
     font-size: 1.2em;
     font-weight: 700;
@@ -182,17 +236,18 @@ section {
     background-color: #000016;
 }
 
-.projects .content{
+.projects .content {
     margin-top: 30px;
 }
 
 /* 👥 كارد الفريق */
-.Team-card{
+.Team-card {
     background-color: #fff;
     border: 1px solid #fff;
     min-height: 14em;
     width: 15em;
-    overflow: hidden; /* إخفاء الزيادة */
+    overflow: hidden;
+    /* إخفاء الزيادة */
     border-radius: 10px;
     margin: 20px;
     transition: 0.7s ease;
@@ -201,7 +256,7 @@ section {
 
 /* 👥 Hover على الكارد */
 .Team-card:hover {
-   transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* 🖼️ عند hover تقل شفافية الصورة */
@@ -210,7 +265,7 @@ section {
 }
 
 /* 🖼️ صور المشاريع */
-.project-image img{
+.project-image img {
     width: 100%
 }
 
@@ -244,7 +299,7 @@ section {
 }
 
 /* 📞 أيقونات التواصل */
-.contact .icon{
+.contact .icon {
     font-size: 4.5em;
 }
 
@@ -276,71 +331,183 @@ section {
 }
 
 /* 🦶 أيقونات الفوتر */
-.footer .social-icons a{
+.footer .social-icons a {
     font-size: 1.3em;
     padding: 0 12px 0 0;
 }
 
+/* Responsive navigation (hamburger) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 6px 8px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation.open {
+    position: absolute;
+    top: 60px;
+    right: 12px;
+    background: rgba(23, 42, 88, 0.98);
+    padding: 12px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width:768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+}
+
 /* 📱 ميديا كويري للشاشات أقل من 1023px */
-@media (max-width:1023px){
-    header{
+@media (max-width:1023px) {
+    header {
         padding: 12px 20px;
     }
 
-    .navigation a{
+    .navigation a {
         padding-left: 10px;
     }
 
-    .title{
+    .title {
         font-size: 1.8em;
     }
 
-    section{
+    section {
         padding: 80px 20px;
     }
 
-    .main-content h2{
+    .main-content h2 {
         font-size: 1em;
     }
 
-    .main-content h3{
+    .main-content h3 {
         font-size: 1.6em;
     }
 
-    .content{
-        flex-direction: column; /* عامودي */
+    .content {
+        flex-direction: column;
+        /* عامودي */
         align-items: center;
     }
 }
 
+/* 📱 ميديا كويري للشاشات أقل من 768px */
+@media (max-width:768px) {
+    header {
+        padding: 10px 12px;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .navigation a {
+        padding-left: 12px;
+        font-size: 1em;
+    }
+
+    /* .logo-text {
+        display: none;
+    } */
+
+    section {
+        padding: 60px 12px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .Team-card,
+    .card {
+        width: 90%;
+        max-width: 520px;
+    }
+
+    .project-image img,
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .main {
+        background-attachment: scroll;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 1.5em;
+    }
+}
+
 /* 📱 ميديا كويري للشاشات أقل من 641px */
-@media (max-width:641px){
-    body{
+@media (max-width:641px) {
+    body {
         font-size: 12px;
     }
 
-    .main-content h2{
+    .main-content h2 {
         font-size: 0.8em;
     }
 
-    .main-content h3{
+    .main-content h3 {
         font-size: 1.4em;
     }
 
-    .logo-text{
+    /* .logo-text {
         display: none;
-    }
-   
+    } */
 
 }
 
+/* 📱 ميديا كويري للشاشات أقل من 480px */
+@media (max-width:480px) {
+    .navigation a {
+        font-size: 0.95em;
+        padding-left: 8px;
+    }
+
+    .title {
+        font-size: 1.4em;
+    }
+
+    .Team-card {
+        width: 95%;
+    }
+}
+
 /* 📱 ميديا كويري للشاشات أقل من 300px */
-@media (max-width:300px){
-    body{
+@media (max-width:300px) {
+    body {
         font-size: 10px;
     }
 }
 
-.ahmad{
+.ahmad {
     color: white;
 }
