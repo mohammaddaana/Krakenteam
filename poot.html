@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Kraken Contact</title>
+  <link rel="icon" type="image/png" href="main/back5.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* 🎨 إعدادات عامة للصفحة */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      direction: ltr;
+      /* اتجاه الكتابة: من اليسار لليمين */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      color: white;
+      background: url("back2.jpg") no-repeat center center;
+      /* خلفية */
+      background-size: cover;
+    }
+
+
+    /* 📦 صندوق الأسئلة */
+    .question-box {
+      margin-top: calc(10vh + 5px);
+
+      /* نزلناه 5px إضافية لتحت */
+      background-color: rgba(0, 0, 0, 0.5);
+      /* شفاف غامق */
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    /* 📝 الحقول (اسم - هاتف - سؤال) */
+
+
+    input,
+    textarea {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    /* 🔘 زر الإرسال */
+    button {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      background-color: #3a6cf4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    button:hover {
+      background-color: #0097a7;
+      /* تغيير لون الزر عند المرور */
+    }
+
+    /* 📱 موبايل + شاشات أكبر */
+    @media (min-width: 768px) {
+      .question-box {
+        margin-top: 85px;
+        /* بدل 80px → زودناها شوي مع 5px */
+        padding: 25px;
+        max-width: 500px;
+      }
+
+      input,
+      textarea,
+      button {
+        font-size: 18px;
+      }
+    }
+  </style>
+
+  <!-- ملف CSS خارجي (اختياري) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 🔝 الهيدر -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="main/back5.png" alt="" class="lago11">
+      <span class="logo-text">kraken</span> </a>
+
+    <!-- روابط التنقل -->
+    <nav class="navigation">
+
+      <a href="Team.html"><i class="fas fa-users"></i> Team</a>
+      <a href="course.html"><i class="fa-edit fas fa-chalkboard-user"></i> Course</a>
+      <a href="projects.html"><i class="fas fa-code"></i> Projects</a>
+      <a href="poot.html" style="color: blueviolet;"><i class="fab-duotone fas fa-comment"></i> Contact</a>
+    </nav>
+  </header>
+
+  <!-- 📥 صندوق إرسال الأسئلة -->
+  <div class="question-box">
+    <input type="text" id="nameInput" placeholder="Full Name">
+    <input type="text" id="phoneInput" placeholder="Phone Number">
+    <textarea id="questionInput" rows="4" placeholder="Write your question here"></textarea>
+    <button onclick="sendQuestion()">Send</button>
+  </div>
+
+  <!-- ⚙️ سكربت إرسال البيانات لتليجرام -->
+  <script>
+    function sendQuestion() {
+      // 🔎 قراءة المدخلات
+      const name = document.getElementById("nameInput").value.trim();
+      const phone = document.getElementById("phoneInput").value.trim();
+      const question = document.getElementById("questionInput").value.trim();
+
+      // ✅ تحقق من الحقول
+      if (!name || !phone || !question) {
+        alert("❗ Please fill in all fields before sending.");
+        return;
+      }
+
+      // ✅ تحقق من رقم الهاتف (10 أرقام)
+      if (!/^\d{10}$/.test(phone)) {
+        alert("❗ Phone number must contain exactly 10 digits.");
+        return;
+      }
+
+      // 📩 صياغة الرسالة
+      const message = `🧑 Name: ${name}\n📞 Phone: ${phone}\n❓ Question: ${question}`;
+
+      // 🔐 بيانات البوت
+      const botToken1 = "8383888466:AAFqM8u3WO20HMkAwFFzI3gCEPl-cAxkCkc";
+
+      // ⚠️ ضع التوكن هنا
+      const chatId = "7031057922";     // ⚠️ ضع الآي دي هنا
+      const url = `https://api.telegram.org/bot${botToken1}/sendMessage`;
+
+      // 🚀 إرسال الطلب إلى Telegram API
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.ok) {
+            alert("✅ Your message has been sent successfully!");
+            // 🧹 تفريغ الحقول بعد الإرسال
+            document.getElementById("nameInput").value = "";
+            document.getElementById("phoneInput").value = "";
+            document.getElementById("questionInput").value = "";
+          } else {
+            alert("❌ Error: " + data.description);
+          }
+        })
+        .catch(error => {
+          alert("❌ An error occurred: " + error.message);
+        });
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>KRAKEN TEAM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      direction: rtl;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      color: white;
+      background: url("background.jpg") no-repeat center center;
+      background-size: cover;
+    }
+
+
+
+
+
+
+
+    .question-box {
+      margin-top: 10vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    button:hover {
+      background-color: #0097a7;
+    }
+
+    @media (min-width: 768px) {
+      .question-box {
+        margin-top: 80px;
+        padding: 25px;
+        max-width: 500px;
+      }
+
+      input, textarea, button {
+        font-size: 18px;
+      }
+    }
+
+  </style>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="main/back5.png" alt="" class="lago11">
+      <span class="logo-text">kraken</span> </a>
+
+    <nav class="navigation">
+      <a href="Team.html">Team</a>
+      <a href="course.html">Course</a>
+      <a href="projects.html">Projects</a>
+      <a href="poot.html" style="color: blueviolet;">Contact</a>
+    </nav>
+  </header>
+
+
+
+  <div class="question-box">
+    <input type="text" id="nameInput" placeholder="الاسم الكامل">
+    <input type="text" id="phoneInput" placeholder="رقم الهاتف">
+    <textarea id="questionInput" rows="4" placeholder="اكتب سؤالك هنا"></textarea>
+    <button onclick="sendQuestion()">إرسال</button>
+  </div>
+
+  <script>
+    function sendQuestion() {
+      const name = document.getElementById("nameInput").value.trim();
+      const phone = document.getElementById("phoneInput").value.trim();
+      const question = document.getElementById("questionInput").value.trim();
+
+      if (!name || !phone || !question) {
+        alert("❗ الرجاء تعبئة جميع الحقول قبل الإرسال.");
+        return;
+      }
+
+      if (!/^\d{10}$/.test(phone)) {
+        alert("❗ رقم الهاتف يجب أن يحتوي على 10 أرقام فقط.");
+        return;
+      }
+
+      const message = `🧑 الاسم: ${name}\n📞 الرقم: ${phone}\n❓ السؤال: ${question}`;
+      const botToken = "8399768192:AAEeXfMStwy5rTz2huTyy_ihGIQiIc3Y1lM";
+      const chatId = "7031057922";
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          alert("✅ تم إرسال البيانات بنجاح!");
+          document.getElementById("nameInput").value = "";
+          document.getElementById("phoneInput").value = "";
+          document.getElementById("questionInput").value = "";
+        } else {
+          alert("❌ خطأ: " + data.description);
+        }
+      })
+      .catch(error => {
+        alert("❌ حدث خطأ: " + error.message);
+      });
+    }
+  </script>
+</body>
+</html> -->
