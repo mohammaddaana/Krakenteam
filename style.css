@@ -396,6 +396,8 @@ section {
     .project-card,
     .Team-card {
         width: 95%;
+        margin: 0%;
+
     }
 }
 
