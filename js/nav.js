@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.querySelector('.nav-toggle');
+  w
   const nav = document.querySelector('.navigation');
   if (!toggle || !nav) return;
 
