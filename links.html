@@ -1,287 +1,165 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kraken Team Links</title>
-
-  <!-- favicon (غيّر المسار إذا لزم) -->
-  <link rel="icon" type="image/png" href="main/ChatGPT Image 16 سبتمبر 2025، 05_36_33 م.png" />
+  <link rel="icon" type="image/png" href="main/kraken.png" />
 
   <style>
-    :root{
-      --sea-1: #011627;
-      --sea-2: #003b5c;
-      --sea-3: #045d6b;
-      --sea-4: #0fb9b1;
-      --accent: #66fcf1;
-      --muted: #c5c6c7;
-    }
-
-    /* ====== صفحة عامة ====== */
-    html,body{height:100%; margin:0;}
+    /* 🌊 الخلفية المتدرجة المتحركة */
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
-      color: var(--muted);
+      color: #c5c6c7;
+      text-align: center;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
       overflow: hidden;
-      background: linear-gradient(120deg, var(--sea-1), var(--sea-2), var(--sea-3));
+      background: linear-gradient(120deg, #011627, #003b5c, #045d6b);
       background-size: 300% 300%;
-      animation: seaColor 12s ease-in-out infinite;
-    }
-    @keyframes seaColor {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+      animation: waveMotion 12s ease-in-out infinite;
     }
 
-    /* صندوق المحتوى */
-    .container{
+    @keyframes waveMotion {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 🧊 صندوق المحتوى */
+    .container {
       position: relative;
-      z-index: 20;
+      z-index: 10;
+      background: rgba(10, 20, 25, 0.6);
+      padding: 35px 25px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(102, 252, 241, 0.2);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
       width: 320px;
-      padding: 28px 20px 38px;
-      border-radius: 18px;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(11,12,16,0.55), rgba(31,40,51,0.45));
-      box-shadow: 0 8px 30px rgba(2,10,15,0.6);
-      border: 1px solid rgba(102,252,241,0.08);
     }
 
+    /* 🪸 صورة الشعار */
     .logo {
       width: 110px;
       height: 110px;
-      object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 6px 25px rgba(69,162,158,0.12);
-      margin: 0 auto 12px;
-      transform-origin: center;
-      animation: float 4s ease-in-out infinite;
+      margin-bottom: 15px;
+      object-fit: cover;
+      box-shadow: 0 0 25px #45a29e;
+      animation: float 5s ease-in-out infinite;
     }
+
     @keyframes float {
-      0%{transform:translateY(0px)}
-      50%{transform:translateY(-8px)}
-      100%{transform:translateY(0px)}
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
 
-    h1{
-      margin:6px 0 2px;
-      color: var(--accent);
-      font-size:1.6rem;
-      letter-spacing:0.6px;
+    h1 {
+      color: #66fcf1;
+      font-size: 1.8em;
+      margin-bottom: 5px;
     }
 
-    p{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:0.95rem;
+    p {
+      color: #c5c6c7;
+      font-size: 0.95em;
+      margin-bottom: 25px;
     }
 
-    /* الأزرار/الروابط */
-    .link{
-      display:block;
-      width:100%;
-      margin:8px 0;
-      padding:12px 14px;
-      border-radius:12px;
-      text-decoration:none;
-      color:var(--accent);
-      background: rgba(6,18,22,0.35);
-      border:1px solid rgba(69,162,158,0.12);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-      font-weight:600;
-      text-align:left;
-      box-shadow: 0 4px 14px rgba(2,10,15,0.25);
+    /* 🔗 الأزرار */
+    .link {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 14px 20px;
+      background: rgba(31, 40, 51, 0.85);
+      color: #66fcf1;
+      text-decoration: none;
+      border-radius: 12px;
+      border: 1px solid #45a29e;
+      transition: all 0.3s ease;
+      font-weight: 600;
     }
-    .link:hover{ transform:translateY(-4px) scale(1.01); background: rgba(69,162,158,0.08); box-shadow: 0 8px 24px rgba(69,162,158,0.08); color:#031016; background-color: #45a29e; }
 
-    footer{ margin-top:14px; color:#99a0a6; font-size:0.8rem; }
+    .link:hover {
+      background: #45a29e;
+      color: #0b0c10;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #45a29e;
+    }
 
-    /* ====== أمواج SVG في الخلفية (شفافة تحت المحتوى) ====== */
-    .waves{
+    footer {
+      margin-top: 25px;
+      font-size: 0.8em;
+      color: #888;
+    }
+
+    /* 🐙 الأخطبوط بالخلفية */
+    .kraken-bg {
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -10%;
-      height: 40vh;
-      z-index: 5;
-      pointer-events: none;
-      opacity: 0.14;
-      transform: translateZ(0);
-    }
-    .wave { animation: waveAnim 8s linear infinite; transform-origin: center; }
-    .wave.wave2{ animation-duration: 12s; opacity: 0.85; transform: translateY(6px) scale(1.02); }
-    .wave.wave3{ animation-duration: 20s; opacity: 0.7; transform: translateY(12px) scale(1.06); }
-    @keyframes waveAnim { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-
-    /* ====== Kraken SVG (في الأمام، لكنه شفاف خلف الصندوق) ====== */
-    .kraken-wrap{
-      position: fixed;
+      bottom: -50px;
       left: 50%;
-      bottom: -6vh; /* يظهر جزء منه يسبح */
-      transform: translateX(-50%);
-      z-index: 10;
-      pointer-events: none; /* لا يعيق النقر على العناصر ماعدا عند التفعيل */
-      width: 65vw;
-      max-width: 900px;
-      opacity: 0.95;
+      transform: translateX(-50%) scale(1.4);
+      opacity: 0.2;
+      animation: swim 20s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
     }
 
-    /* نخفف تفاصيل النتكونلز لتسهيل التحريك */
-    .tentacle { transform-origin: 50% 50%; transition: transform 400ms cubic-bezier(.22,.9,.3,1); }
-
-    /* حركة السباحة الهادئة */
-    .swim .body { animation: bodyFloat 6s ease-in-out infinite; }
-    .swim .tentacle { animation: tentacleSway 4s ease-in-out infinite; }
-
-    @keyframes bodyFloat { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
-    @keyframes tentacleSway {
-      0%{transform: rotate(-6deg)}25%{transform: rotate(6deg)}50%{transform: rotate(-6deg)}75%{transform: rotate(6deg)}100%{transform: rotate(-6deg)}
+    @keyframes swim {
+      0% { transform: translate(-50%, 0) scale(1.4) rotate(0deg); }
+      50% { transform: translate(-45%, -10px) scale(1.45) rotate(2deg); }
+      100% { transform: translate(-50%, 0) scale(1.4) rotate(0deg); }
     }
 
-    /* ====== تأثير "تمسك" عند النقر: نضيف class .grabbed على kraken-wrap ====== */
-    .grabbed { pointer-events: auto; } /* الآن يمكنه الظهور على أنه "تفاعل" */
-    .grabbed .tentacle.t1 { animation: none; transform-origin: 70% 20%; animation: grab1 700ms cubic-bezier(.2,.8,.2,1) forwards; }
-    .grabbed .tentacle.t2 { animation: none; transform-origin: 80% 40%; animation: grab2 750ms cubic-bezier(.2,.8,.2,1) forwards; }
-    .grabbed .tentacle.t3 { animation: none; transform-origin: 20% 60%; animation: grab3 850ms cubic-bezier(.18,.9,.24,1) forwards; }
-    .grabbed .body { animation: pop 420ms ease forwards; transform-origin:center center; }
-
-    @keyframes pop { 0%{transform:scale(1)} 60%{transform:scale(1.03)} 100%{transform:scale(1)} }
-    @keyframes grab1 { 0%{transform:rotate(-6deg) translateY(0)} 60%{transform:rotate(-30deg) translate(-22px,-50px) scale(1.02)} 100%{transform:rotate(-26deg) translate(-18px,-45px) scale(1.02)} }
-    @keyframes grab2 { 0%{transform:rotate(6deg) translateY(0)} 60%{transform:rotate(32deg) translate(30px,-62px) scale(1.02)} 100%{transform:rotate(28deg) translate(26px,-56px) scale(1.02)} }
-    @keyframes grab3 { 0%{transform:rotate(-4deg) translateY(0)} 60%{transform:rotate(18deg) translate(-6px,-70px) scale(1.01)} 100%{transform:rotate(14deg) translate(-4px,-62px) scale(1.01)} }
-
-    /* مؤثرات عند مسك الصفحة: ظل مؤقت */
-    .grab-visual {
-      position: fixed;
-      left: 0; right:0; top:0; bottom:0;
-      z-index: 40;
-      pointer-events:none;
-      opacity:0;
-      transition: opacity .18s ease;
-      background: radial-gradient(circle at 50% 30%, rgba(5,20,25,0.12), rgba(2,8,10,0.36));
+    /* 🌫 تأثير عند النقر */
+    .grab {
+      animation: grabEffect 0.6s ease forwards;
     }
-    .grab-visual.active{ opacity:1; transition: opacity .12s ease; }
 
-    /* Responsive */
-    @media (max-width:420px){
-      .container{ width:92%; padding:20px; border-radius:14px; }
-      .kraken-wrap{ width:95vw; bottom:-10vh; }
-      .link{ padding:12px; font-size:0.92rem; }
+    @keyframes grabEffect {
+      0% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(0.98); filter: brightness(1.3); }
+      100% { transform: scale(1); filter: brightness(1); }
     }
+
   </style>
 </head>
 <body>
+  <!-- 🐙 الأخطبوط الأسطوري -->
+  <img src="main/kraken.png" class="kraken-bg" alt="Kraken Background">
 
-  <!-- أمواج خلفية SVG (خفيفة الشفافية) -->
-  <div class="waves" aria-hidden="true">
-    <svg viewBox="0 0 1200 200" preserveAspectRatio="none" style="width:200%; height:100%;">
-      <path class="wave" d="M0,100 C150,180 350,40 600,100 C850,160 1050,20 1200,100 L1200 200 L0 200 Z" fill="#023047" opacity="0.55"/>
-      <path class="wave wave2" d="M0,110 C200,40 380,170 600,120 C820,70 1000,160 1200,110 L1200 200 L0 200 Z" fill="#046582" opacity="0.45"/>
-      <path class="wave wave3" d="M0,120 C180,200 420,20 600,140 C780,260 1020,30 1200,120 L1200 200 L0 200 Z" fill="#08979a" opacity="0.32"/>
-    </svg>
-  </div>
-
-  <!-- العنصر الرئيسي (روابط) -->
-  <div class="container" role="main" aria-label="Kraken Team links">
-    <img class="logo" src="main/ChatGPT Image 16 سبتمبر 2025، 05_36_33 م.png" alt="Kraken Logo">
+  <!-- 🧊 صندوق الروابط -->
+  <div class="container">
+    <img src="main/f3e0ed97-87a7-4ca3-abfa-119853f4a7f3.png" alt="Kraken Logo" class="logo">
     <h1>⚡ Kraken Team ⚡</h1>
     <p>The team provides workshops and courses in technology, programming, and various technical fields.</p>
 
-    <a class="link" href="https://mohammaddaana.github.io/Krakenteam/" target="_blank">🌐 Official Website</a>
-    <a class="link" href="https://chat.whatsapp.com/EvsNaCpGyY7IVrJC1nFmo7?mode=wwt" target="_blank">💬 IT Gate Community (WhatsApp)</a>
-    <a class="link" href="https://chat.whatsapp.com/Lq8XTM7BMf488zqqlYurWf" target="_blank">📚 IT Courses Channel (WhatsApp)</a>
-    <a class="link" href="https://www.instagram.com/krr_kn?igsh=MnliYTFsaDFybnJr" target="_blank">📸 Official Instagram</a>
-    <a class="link" href="https://www.youtube.com/@KrakenTeam8" target="_blank">🎥 YouTube Channel</a>
+    <a class="link" href="https://chat.whatsapp.com/EvsNaCpGyY7IVrJC1nFmo7?mode=wwt" target="_blank">💬 IT Gate</a>
+    <a class="link" href="https://chat.whatsapp.com/Lq8XTM7BMf488zqqlYurWf" target="_blank">📚 IT Courses</a>
+    <a class="link" href="https://www.instagram.com/krr_kn?igsh=MnliYTFsaDFybnJr" target="_blank">📸Instagram Profile</a>
+    <a class="link" href="https://www.youtube.com/@KrakenTeam8" target="_blank">🎥 YouTube </a>
     <a class="link" href="https://www.linkedin.com/in/kraken-team-7a328137b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">💼 LinkedIn Profile</a>
     <a class="link" href="https://wa.me/962795851703" target="_blank">📞 Contact via WhatsApp</a>
 
     <footer>© 2025 Kraken Team | Powered by Team</footer>
   </div>
 
-  <!-- Kraken SVG أمام الصفحة (قابل للتحريك) -->
-  <div class="kraken-wrap swim" id="kraken" aria-hidden="true">
-    <svg viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto;">
-      <!-- جسم الأخطبوط -->
-      <g class="body" transform="translate(500,150)">
-        <ellipse cx="0" cy="0" rx="120" ry="80" fill="#04323b" stroke="#66fcf1" stroke-opacity="0.08"/>
-        <ellipse cx="0" cy="-6" rx="100" ry="60" fill="#045a58" opacity="0.98"/>
-        <circle cx="-28" cy="-8" r="8" fill="#0b0c10" />
-        <circle cx="28" cy="-8" r="8" fill="#0b0c10" />
-      </g>
-
-      <!-- مجاديف (tentacles) - كل مجداف مجموعة مستقلة مع class t1,t2,t3... -->
-      <g transform="translate(500,170)" fill="none" stroke="#03343a" stroke-width="18" stroke-linecap="round">
-        <path class="tentacle t1" d="M -40 20 C -120 40 -160 170 -240 260" stroke="#044b4a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
-        <path class="tentacle t2" d="M -20 30 C 60 70 160 140 260 200" stroke="#044b4a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
-        <path class="tentacle t3" d="M 40 30 C 140 10 220 -40 320 -80" stroke="#044b4a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
-        <path class="tentacle t4" d="M 10 40 C -20 120 -80 190 -140 240" stroke="#044b4a" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
-        <path class="tentacle t5" d="M 60 40 C 100 120 180 170 240 220" stroke="#044b4a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- تراكب بصري عند المسك -->
-  <div class="grab-visual" id="grabVisual" aria-hidden="true"></div>
-
   <script>
-    // نختار العناصر
-    const kraken = document.getElementById('kraken');
-    const grabVisual = document.getElementById('grabVisual');
-    const links = document.querySelectorAll('.link');
-
-    // وظيفة: تشغيل تأثير "المسك" مؤقتاً
-    function doGrabEffect() {
-      // فعّل الحالة
-      kraken.classList.add('grabbed');
-      grabVisual.classList.add('active');
-
-      // صوت لطيف (مضمّن base64 صغير دقّة منخفضة) - اختياري: لو بدك تحذف السطور التالية امسحها
-      try {
-        const audio = new Audio('data:audio/mp3;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAACcQCA...'); // placeholder empty (لم أدرج صوت حقيقي)
-        // audio.play().catch(()=>{/* صوت قد يمنع في بعض المتصفحات حتى يتفاعل المستخدم */});
-      } catch(e){/* تجاهل خطأ الصوت */ }
-
-      // ارجع للوضع الطبيعي بعد 1.1 ثانية
-      clearTimeout(window.__krakenGrabTimeout);
-      window.__krakenGrabTimeout = setTimeout(() => {
-        kraken.classList.remove('grabbed');
-        grabVisual.classList.remove('active');
-      }, 1100);
-    }
-
-    // ربط النقر على كل رابط بانميشن المسك
-    links.forEach(a => {
-      a.addEventListener('click', (ev) => {
-        // نمنع نبضة الضغطة من إيقاف التنقل لو بدك تتركه يفتح الرابط شغّل السطر الثاني بدل preventDefault
-        // ev.preventDefault();
-        doGrabEffect();
-        // إذا رغبت تفتح الرابط بعد 320ms لتعطي زمن للحركة: مثال:
-        // const href = a.href; setTimeout(()=> window.open(href,'_blank'), 320);
+    // ✨ تأثير عند النقر على أي رابط
+    document.querySelectorAll('.link').forEach(link => {
+      link.addEventListener('click', e => {
+        document.body.classList.add('grab');
+        setTimeout(() => document.body.classList.remove('grab'), 600);
       });
     });
-
-    // أيضاً رابط النقر في أي مكان داخل المحتوى يعمل المسك
-    document.querySelector('.container').addEventListener('click', (e)=>{
-      // لو ضغطت على الأزرار سيتم تنفيذ من قبلهم — هذا لتغطية بقية الصفحة
-      if(e.target.classList.contains('link')) return;
-      doGrabEffect();
-    });
-
-    // تحسين: لو المستخدم سحب الصفحة أو عمل scroll، نحافظ على حركة السباحة
-    (function randomSwayAdjust(){
-      const container = kraken;
-      setInterval(()=>{
-        // نغير مدة السواي عشوائياً بشكل طفيف لإحساس أكثر طبيعية
-        const r = Math.random()*3 + 3.5;
-        container.style.setProperty('--sway-d', r + 's');
-      }, 4200);
-    })();
-
-    // ملاحظة: إن أردت أن التجاذب يعمل عند الضغط على زر معين فقط، غيّر selector أعلاه.
   </script>
 </body>
 </html>
